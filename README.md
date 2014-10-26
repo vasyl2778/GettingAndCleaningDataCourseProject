@@ -14,5 +14,10 @@ This file describes how run_analysis.R script works.
 5. For more details read CodeBook.md file.
 
 
+<b>[!] You may need to install data.table package and its dependencies to run this script.</b>
+
+Use the following commnad in RStudio:
+
+install.packages("data.table")
 
 
