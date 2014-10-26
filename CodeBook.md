@@ -1,7 +1,6 @@
 ## This is a code book that describes the variables, the data, and any transformations or work ## performed to clean up the data
 
 
-
 ## Transformations
 
 In the 1st part script prepares descriptive datasets from:
@@ -28,15 +27,12 @@ In the last part script completed project steps:
  4. Appropriately labels the data set with descriptive variable names. 
  5. From the data set in step 4, creates a second, independent tidy data set
     with the average of each variable for each activity and each subject.
-    
-After sucessfully completed script you will find 2 output files are generated in
-the current working directory:
-- merged_data.txt (7.9 Mb): it contains a data frame called merged_data
-with 10299*68 dimension.
-- summarized_data.txt (220 Kb): it contains a data frame called avg_ACT_SUB
-with 180*68 dimension.
 
-Use data <- read.table("summarized_data.txt") command in RStudio to read the file. 
-Since we are required to get the average of each variable for each activity and
-each subject, and there are 6 activities in total and 30 subjects in total,
-we have 180 rows with all combinations for each of the 66 features.
+# Datasets
+After sucessfully completed script you will find 2 output files generated in
+the working directory:
+- merged_data.txt (7.96 Mb): with a data frame called merged_data (10299 observations of 68 variables).
+- summarized_data.txt (220 Kb): with a data frame called avg_ACT_SUB (180 observations of 68 variables).
+
+To read the file use the following command in RStudio:
+data <- read.table("summarized_data.txt")
