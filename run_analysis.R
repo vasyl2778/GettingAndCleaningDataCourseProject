@@ -126,16 +126,9 @@ write.table(merged_data, "merged_data.txt")
 ## 5. From the data set in step 4, creates a second, independent tidy data set
 ##    with the average of each variable for each activity and each subject.
 
-install.packages("dplyr")
-library(dplyr)
-
-# the names of the columns to summarize
-#cols <- c("Subject","Activity")
-cols <- names(merged_data)[-c(1,68)]
-# the dots component of call to summarise
-dots <- sapply(cols ,function(x) substitute(mean(x), list(x=as.name(x))))
-
-avg_ACT_SUB <- do.call(summarise, c(list(.data=merged_data), dots))
+library(data.table)
+DT <- data.table(merged_data)
+avg_ACT_SUB <- DT[, lapply(.SD, mean), by = c("Subject", "Activity")]
 
 ## ---------------------------------------------
 ## write out the 2nd dataset
